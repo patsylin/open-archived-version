@@ -1,28 +1,25 @@
 {
   "manifest_version": 3,
   "name": "Archive Reader",
-  "description": "Open the newest archived version of any page using Wayback Machine or Archive.ph. Automatically detects paywalls and suggests an archived version.",
+  "short_name": "Archive Reader",
   "version": "0.1.0",
+  "description": "Open the newest archived version of the current page via Wayback Machine (or Archive.ph).",
   "action": {
-    "default_popup": "popup.html",
-    "default_title": "Open archived version"
+    "default_title": "Open archived version",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup.html"
   },
-  "permissions": ["tabs", "storage", "scripting"],
-  "host_permissions": ["https://*/*", "http://*/*"],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://*/*", "http://*/*"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
-    }
-  ],
+  "permissions": ["activeTab"],
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "options_page": "options.html"
+  "background": {
+    "service_worker": "background.js"
+  }
 }

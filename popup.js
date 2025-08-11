@@ -1,24 +1,42 @@
-async function getCurrentTabUrl() {
-  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  return tab?.url || "";
-}
+// Read current tab + saved provider, update UI, and wire actions.
+(async function init() {
+  const openBtn = document.getElementById("openCurrent");
+  const providerSelect = document.getElementById("provider");
+  const hostEl = document.getElementById("host");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sel = document.getElementById("provider");
+  // Show current tab's host
+  try {
+    const [tab] = await chrome.tabs.query({
+      active: true,
+      currentWindow: true,
+    });
+    const url = tab?.url || "";
+    let host = "chrome/internal";
+    try {
+      host = new URL(url).host || host;
+    } catch {}
+    hostEl.textContent = host;
+  } catch {
+    hostEl.textContent = "unknown";
+  }
+
+  // Load provider from sync storage
   chrome.storage.sync.get({ provider: "wayback" }, ({ provider }) => {
-    sel.value = provider;
-  });
-  sel.addEventListener("change", () => {
-    chrome.storage.sync.set({ provider: sel.value });
+    providerSelect.value = provider || "wayback";
   });
 
-  document.getElementById("openCurrent").addEventListener("click", async () => {
-    const url = await getCurrentTabUrl();
-    chrome.runtime.sendMessage({ type: "OPEN_ARCHIVE_FOR_TAB", url });
+  // Persist provider changes
+  providerSelect.addEventListener("change", () => {
+    chrome.storage.sync.set({ provider: providerSelect.value });
   });
-});
-document.getElementById("openArchive").addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  const archivedUrl = `https://web.archive.org/web/*/${tab.url}`;
-  chrome.tabs.create({ url: archivedUrl });
-});
+
+  // Open archive for the active tab (background decides URL/provider)
+  openBtn.addEventListener("click", async () => {
+    try {
+      await chrome.runtime.sendMessage({ type: "OPEN_ARCHIVE_FOR_TAB" });
+      window.close(); // neat UX: close popup after action
+    } catch (e) {
+      console.error("Failed to send OPEN_ARCHIVE_FOR_TAB", e);
+    }
+  });
+})();

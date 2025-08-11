@@ -1,0 +1,20 @@
+{
+  "name": "open-archived-version",
+  "version": "1.0.0",
+  "description": "![Manifest V3](https://img.shields.io/badge/Manifest-V3-brightgreen) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Platform: Chrome](https://img.shields.io/badge/Platform-Chrome-blue)",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patsylin/open-archived-version.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patsylin/open-archived-version/issues"
+  },
+  "homepage": "https://github.com/patsylin/open-archived-version#readme"
+}
