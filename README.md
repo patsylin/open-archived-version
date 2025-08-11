@@ -52,10 +52,7 @@ Paywalls break sharing, links rot, and pages change. Archive Reader opens the **
 
 ## Screenshots
 
-_Add two images once you capture them:_
-
-- `images/popup.png` — popup with provider selector & button
-- `images/result.png` — archived page opened in a new tab
+- `screenshots/popup.png` — popup with provider selector & button
 
 ## Roadmap
 
