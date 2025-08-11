@@ -53,6 +53,7 @@ Paywalls break sharing, links rot, and pages change. Archive Reader opens the **
 ## Screenshots
 
 ![Popup screenshot](screenshots/popup.png)
+![Popup screenshot](screenshots/success.png)
 
 ## Roadmap
 
