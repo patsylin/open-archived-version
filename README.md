@@ -9,30 +9,29 @@
 - [Wayback Machine](https://web.archive.org/)
 - [Archive.ph](https://archive.ph/)
 
-It can also detect common paywalls and offer a quick “Open archived version” button.
+It also detects common paywalls and offers a quick “Open archived version” button.
 
 ---
 
 ## 🚀 Features
 
-- Always opens the **latest** snapshot (Wayback: `/0/`, Archive.ph: `/latest/`).
-- Toolbar button to open archives for the current page.
-- Paywall detection banner.
-- Choice of provider saved in extension settings.
+- **One-click archive access** — Always opens the **latest** snapshot from your chosen provider.
+- **Paywall detection** — Subtle banner suggests an archived view if a paywall is detected.
+- **Provider choice** — Switch between Wayback Machine and Archive.ph in settings.
+- **Lightweight & private** — No tracking, minimal permissions.
 
 ---
 
 ## 📸 Screenshots
 
-_(Replace with your actual captures)_
+**Popup UI**
 ![Popup Screenshot](screenshots/popup.png)
-![Paywall Banner Screenshot](screenshots/banner.png)
 
 ---
 
 ## 🛠 Installation (Developer Mode)
 
-1. Clone or download this repo
+1. **Clone or download this repository**
 
 ```bash
 git clone https://github.com/patsylin/open-archived-version.git
