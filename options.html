@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Open Archived Version — Options</title>
+  </head>
+  <body>
+    <label>
+      Provider:
+      <select id="provider">
+        <option value="wayback">Wayback Machine</option>
+        <option value="archive_today">Archive.ph</option>
+      </select>
+    </label>
+    <script>
+      const sel = document.getElementById("provider");
+      chrome.storage.sync.get(
+        { provider: "wayback" },
+        ({ provider }) => (sel.value = provider)
+      );
+      sel.addEventListener("change", () =>
+        chrome.storage.sync.set({ provider: sel.value })
+      );
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Extension Options</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        min-width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Options</h3>
+    <p>No options available for this extension.</p>
+  </body>
+</html>
