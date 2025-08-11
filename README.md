@@ -52,7 +52,7 @@ Paywalls break sharing, links rot, and pages change. Archive Reader opens the **
 
 ## Screenshots
 
-- `screenshots/popup.png` — popup with provider selector & button
+![Popup screenshot](images/popup.png)
 
 ## Roadmap
 
