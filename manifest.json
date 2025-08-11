@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Open Archived Version",
-  "description": "Quickly open Wayback Machine or Archive.ph for the current page. Shows a gentle prompt on likely paywalls.",
+  "name": "Archive Reader",
+  "description": "Open the newest archived version of any page using Wayback Machine or Archive.ph. Automatically detects paywalls and suggests an archived version.",
   "version": "0.1.0",
   "action": {
     "default_popup": "popup.html",
