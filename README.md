@@ -1,39 +1,72 @@
-# Archive Reader — Chrome Extension (MV3)
+# Archive Reader
 
-![Manifest V3](https://img.shields.io/badge/Manifest-V3-brightgreen)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Platform: Chrome](https://img.shields.io/badge/Platform-Chrome-blue)
+_Open the newest archived version of any page with one click — Wayback Machine & Archive.ph._
 
-**Archive Reader** lets you instantly open the **newest archived version** of any webpage using:
+<!-- Badges (add once live) -->
+<!-- [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/XXXXXXXX)](STORE_LINK) -->
 
-- [Wayback Machine](https://web.archive.org/)
-- [Archive.ph](https://archive.ph/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-It also detects common paywalls and offers a quick “Open archived version” button.
+## Why
 
----
+Paywalls break sharing, links rot, and pages change. Archive Reader opens the **latest archived snapshot** of the current page so you can keep reading and keep references stable.
 
-## 🚀 Features
+## Features
 
-- **One-click archive access** — Always opens the **latest** snapshot from your chosen provider.
-- **Paywall detection** — Subtle banner suggests an archived view if a paywall is detected.
-- **Provider choice** — Switch between Wayback Machine and Archive.ph in settings.
-- **Lightweight & private** — No tracking, minimal permissions.
+- One-click open in **Wayback Machine** (default) or **Archive.ph**
+- **Toolbar button** + **right-click menu** (page or link)
+- Remembers your preferred provider
+- Minimal permissions, **no data collection**
 
----
+## Install
 
-## 📸 Screenshots
+### Chrome Web Store (recommended)
 
-**Popup UI**
-![Popup Screenshot](screenshots/popup.png)
+> Link coming soon
 
----
+<!-- Replace after publish:
+**Install from the Chrome Web Store:** [Archive Reader](STORE_LINK)
+-->
 
-## 🛠 Installation (Developer Mode)
+### Load Unpacked (dev/now)
 
-1. **Clone or download this repository**
+1. Clone or download this repo.
+2. Chrome → `chrome://extensions`
+3. Toggle **Developer mode** (top right).
+4. Click **Load unpacked** → select the project folder.
 
-```bash
-git clone https://github.com/patsylin/open-archived-version.git
-cd open-archived-version
-```
+## Usage
+
+- Click the toolbar icon → opens the latest archive next to your tab.
+- Or right-click any page/link → **Open archived version**.
+- Choose provider (Wayback / Archive.ph) in the popup; it’s remembered.
+
+## Permissions & Privacy
+
+- **Permissions:** `activeTab`, `storage`, and `contextMenus` (for the right-click menu).
+- **Why:**
+  - `activeTab` — read current tab URL after you click.
+  - `storage` — remember your chosen provider.
+  - `contextMenus` — show the right-click action.
+- **Privacy:** Archive Reader **does not collect, store, or transmit** any personal data.
+
+## Screenshots
+
+_Add two images once you capture them:_
+
+- `images/popup.png` — popup with provider selector & button
+- `images/result.png` — archived page opened in a new tab
+
+## Roadmap
+
+- Keyboard shortcut (e.g., Alt+A)
+- Firefox port (MV3)
+- Auto-fallback between providers
+
+## Development
+
+- Edit `manifest.json`, `background.js`, `popup.html`, `popup.js`.
+- Zip for store:
+  ```bash
+  zip -r archive-reader-0.1.0.zip manifest.json background.js popup.html popup.js icons/ -x "*/.*"
+  ```
