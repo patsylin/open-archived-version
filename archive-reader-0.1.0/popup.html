@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Archive Reader</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+        margin: 12px;
+        width: 260px;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      button {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #f9f9f9;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #eee;
+      }
+      select {
+        padding: 6px;
+        flex: 1;
+      }
+      small {
+        color: #666;
+      }
+      #status {
+        margin-top: 8px;
+        font-size: 12px;
+        color: #666;
+      }
+      #host {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row" style="margin-bottom: 10px">
+      <button id="openCurrent" title="Open newest archived snapshot">
+        Open archive for this tab
+      </button>
+    </div>
+
+    <div class="row">
+      <label for="provider" style="min-width: 72px">Provider:</label>
+      <select id="provider" aria-label="Archive provider">
+        <option value="wayback">Wayback Machine</option>
+        <option value="archive_today">Archive.ph</option>
+      </select>
+    </div>
+
+    <p id="status">
+      <small>Tab: <span id="host">…</span></small
+      ><br />
+      <small>Tip: Right-click the icon for a context menu.</small>
+    </p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
