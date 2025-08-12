@@ -3,7 +3,8 @@
   "name": "Archive Reader",
   "short_name": "Archive Reader",
   "version": "0.1.0",
-  "description": "Open the newest archived version of the current page via Wayback Machine or Archive.ph.",
+  "description": "description": "Open archived versions of pages instantly — Wayback Machine & Archive.ph support.",
+    "version_name": "0.1.0",
   "author": "Patsy Lin",
   "homepage_url": "https://github.com/patsylin/open-archived-version",
   "action": {
